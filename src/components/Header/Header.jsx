@@ -21,7 +21,7 @@ const Header = () => {
              </ul>
              <div className={styles.buttons}>
                <button className={styles["login-button"]}>Login</button>
-               <button className={styles["sign-up"]}>Sign up</button>
+               <button className={styles["sign-up-button"]}>Sign up</button>
              </div>
           </div>
         </div>
