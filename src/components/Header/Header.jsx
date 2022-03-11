@@ -1,38 +1,27 @@
 import React from "react";
+import { menu } from "./menu";
+import styles from "./Header.module.scss";
 
-const menu = [
-    {
-       title:"Products",
-       link:"/",
-    },
-    {
-        title:"Pricing",
-        link:"/",
-     },
-     {
-        title:"Dashboard",
-        link:"/",
-     }
-]
+
 
 const Header = () => {
     return(
-        <div >
-          <div className="logo">
-              <img src="https://cdn.svgporn.com/logos/lightstep.svg" alt=""/>
+        <div className={styles.header} >
+          <div className={styles.logo}>
+              <img src="https://cdn.svgporn.com/logos/lightstep.svg" alt="" height="35px" />
           </div>  
-          <div className="menu-wrapper">
-             <ul>
+          <div className={styles.wrapper}>
+             <ul className={styles.menu}>
                  {menu.map((item,idx)=>(
-                    <li>
+                    <li key={`menu item ${idx}`}>
                      <a href={item.link}>{item.title}</a>
                     </li>
                  ))}
                  
              </ul>
-             <div className="auth-buttons">
-               <button className="login">Login</button>
-               <button className="sign-up">Sign up</button>
+             <div className={styles.buttons}>
+               <button className={styles["login-button"]}>Login</button>
+               <button className={styles["sign-up"]}>Sign up</button>
              </div>
           </div>
         </div>
