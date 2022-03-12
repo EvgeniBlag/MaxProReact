@@ -1,9 +1,11 @@
 import Header from "./components/Header/Header";
+import Articles from "./components/Articles/Articles";
 
 function App() {
   return (
-    <div >
+    <div style={{padding:"20px 40px"}} >
 <Header/>
+<Articles/>
     </div>
   );
 }

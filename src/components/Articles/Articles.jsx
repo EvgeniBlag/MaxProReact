@@ -5,6 +5,7 @@ const Articles = () =>{
     return (
         <div>
        <h1>Articles</h1>
+       <input type="text" value="wef" placeholder="Enter city" />
       <div className={styles.card}>
         <img src="" alt=""/>
         <h4></h4>
