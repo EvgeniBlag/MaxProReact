@@ -1,26 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import styles from "./Articles.module.scss";
+import axios from "axios";
 
 const Articles = () =>{
-    const[city,setCity]=useState("Moscow");
+    const[posts,setPosts]=useState([]);
+    const[loading,setLoading] = useState(true);
+
+    useEffect(()=>{
+   const fetchData = async () =>{
+       try {
+           const {data} = await axios.get(
+               "https://jsonplaceholder.typicode.com/posts"
+           )
+         
+         setPosts(data)
+       } catch (error){
+           console.log(error)
+        }
+   }
+
+    },[])
+
 
     return (
         <div>
        <h1>Articles</h1>
 
-       <input
-         type="text"
-         value={city}
-         placeholder="Enter city"
-         onChange={event=>setCity(event.target.value)}
-            />
-            
-      <div className={styles.card}>
-        <img src="" alt=""/>
-        <h4></h4>
-        <a href="/">Read now</a>
-      </div>
+       {loading && "Loading ..."}
+    <div className={styles.wrapper}>
+       {posts.map(post=>(
+            <div key={post.id} className={styles.card}> 
+            <h4>{post.title}</h4>         
+            <p>{post.body}</p>
+            <a href="/">Read now</a>
+          </div>
+       ))}
+   </div>
+      
         </div>
     )
 }
