@@ -35,9 +35,8 @@
 
     >button{
         cursor: pointer;
-        border:none;
         outline: none;
-        background-color: transparent;
+        
     }
 }
 
@@ -45,9 +44,13 @@
     font-size: 16px;
     color:#222;
     padding: 0px 6px;
+    background-color: red;
+   
 }
 .sign-up-button{
+color:#222;
+background-color: blue;
 margin-left: 15px;
-padding: 10px 8px;
-border: 1px solid #e1e1e1;
+padding: 0px 6px;
+
 }
