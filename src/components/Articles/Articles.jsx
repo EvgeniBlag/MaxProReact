@@ -19,7 +19,7 @@ const Articles = () =>{
            console.log(error)
         }
    }
-
+    fetchData()
     },[])
 
 
