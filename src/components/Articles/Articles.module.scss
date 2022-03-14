@@ -1,11 +1,16 @@
 .wrapper{
+    padding: 15px 0px;
     display: flex;
     justify-content: space-between;
-    
     flex-wrap: wrap;
     
 }
-
+.articles{
+    color:#222;
+    padding: 15px 0px;
+    text-align: center;
+    text-transform: uppercase;
+}
 .card {
    
     width:28%;

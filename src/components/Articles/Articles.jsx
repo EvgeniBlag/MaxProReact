@@ -18,6 +18,7 @@ const Articles = () =>{
        } catch (error){
            console.log(error)
         }
+        setLoading(false)
    }
     fetchData()
     },[])
@@ -25,9 +26,9 @@ const Articles = () =>{
 
     return (
         <div>
-       <h1>Articles</h1>
+       <h1 className={styles.articles}>Articles</h1>
 
-       {loading && "Loading ..."}
+      
     <div className={styles.wrapper}>
        {posts.map(post=>(
             <div key={post.id} className={styles.card}> 
